@@ -17,7 +17,7 @@ public class notepad extends JFrame implements ActionListener {
 
     Font font;
 
-    JMenu file, edit, help, options, Font, font_text;
+    JMenu file, edit, help, options, Font;
 
     JMenuItem word_wrap_off, word_wrap_on, new_file, save, open, exit, helping, normal, bold, About, hello;
 
@@ -161,22 +161,6 @@ public class notepad extends JFrame implements ActionListener {
         font30 = new JMenuItem("30");
         font30.addActionListener(this);
         Font.add(font30);
-
-        //Font layout
-
-        font_text = new JMenu("Font style");
-        font_text.setFont(font);
-        edit.add(font_text);
-
-        normal = new JMenuItem("Normal");
-        normal.setFont(font);
-        normal.addActionListener(this);
-        font_text.add(normal);
-
-        bold = new JMenuItem("Bold");
-        bold.setFont(font);
-        bold.addActionListener(this);
-        font_text.add(bold);
 
         //Help
 
@@ -341,11 +325,6 @@ public class notepad extends JFrame implements ActionListener {
         if (e.getSource() == exit && saved == false){
             new assistant_window();
         }
-        // if (e.getSource() == colorbutton) {
-        //     JColorChooser colorchooser = new JColorChooser();
-        //     Color color = colorchooser.showDialog(null, "Choose a color", Color.black);
-        //     textarea.setForeground(color);
-        // }
     }
     
 
@@ -359,5 +338,9 @@ public class notepad extends JFrame implements ActionListener {
         Random rand = new Random();
         int y = rand.nextInt(100) + 1;
         return y;
+    }
+
+    void About_notepad(){
+        System.out.println("Hello");
     }
 }
